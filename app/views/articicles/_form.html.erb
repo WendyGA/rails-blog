@@ -1,0 +1,27 @@
+<%= form_with(model: articicle) do |form| %>
+  <% if articicle.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(articicle.errors.count, "error") %> prohibited this articicle from being saved:</h2>
+
+      <ul>
+        <% articicle.errors.each do |error| %>
+          <li><%= error.full_message %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= form.label :tile %>
+    <%= form.text_field :tile %>
+  </div>
+
+  <div class="field">
+    <%= form.label :body %>
+    <%= form.text_area :body %>
+  </div>
+
+  <div class="actions">
+    <%= form.submit %>
+  </div>
+<% end %>
